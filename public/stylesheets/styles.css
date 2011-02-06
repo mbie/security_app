@@ -12,6 +12,12 @@ body {
 table{
   text-align: center;
 }
+a { color: #000; }
+a:visited { color: #666; }
+
+#notice {
+  color: green;
+}
 #notes{
   font-size: 1px;
 }

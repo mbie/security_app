@@ -26,19 +26,6 @@ class SqlInjectionController < ApplicationController
     end
   end
   
-  def login_safe
-    if request.post?
-      
-      user = User.find(:first, :conditions => ["name =  ? and password = ?", params[:name], params[:password]])
-      if user
-        session[:user_id] = user.id
-        redirect_to(:action => "index")
-      else
-        flash.now[:notice] = 'Blad logowania'
-      end         
-    end
-  end
-  
   def logout
     session[:user_id] = nil
     redirect_to(:action => "index")    
@@ -50,7 +37,7 @@ class SqlInjectionController < ApplicationController
       @projects = Project.find(:all, :conditions => "title = '#{params[:title]}'")
      # @projects = Project.find(:all, :conditions => ["title = ?", params[:title]])
       if @projects.empty?
-        flash.now[:notice] = 'Nie znaleziono projektow o nazwie: ' + params[:title]
+        flash.now[:notice] = 'Nie znaleziono projektow o podanej nazwie: '
       else
         flash.now[:notice] = 'Znaleziono projektow: ' + @projects.count.to_s
       end

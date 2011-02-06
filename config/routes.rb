@@ -1,29 +1,19 @@
 SecurityApp::Application.routes.draw do
-  get "xss/index"
+  root :to => "sql_injection#index"
   match "/xss" => "articles#index" , :as => :xss
+  resources :articles
+  
   get "csrf/index"
   get "csrf/go_to_google"
 
-  root :to => "sql_injection#index"
+  post "mass_assignment/register"
+  get "mass_assignment/register"
+  get "mass_assignment/index"
+  get "mass_assignment/new"
   
-  resources :articles
-  
-  get "session_fixation/index"
-
-  get "session_fixation/change_session_id"
-
-  post "mass_assigment/register"
-  get "mass_assigment/register"
-  get "mass_assigment/index"
-  get "mass_assigment/new"
-  
-
   get "sql_injection/index"
-
   get "sql_injection/login"
   post "sql_injection/login"
-  get "sql_injection/login_safe"
-  post "sql_injection/login_safe"
   get "sql_injection/logout"
   get "sql_injection/search_projects"
   post "sql_injection/search_projects"
