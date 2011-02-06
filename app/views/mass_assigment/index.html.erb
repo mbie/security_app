@@ -1,0 +1,42 @@
+<% if @users %>
+  <table>
+    <tr> 
+      <th>ID</th>
+      <th>Nazwa</th>
+      <th>Admin</th>
+    </tr>
+    <% @users.each do |user| %>
+    <tr>
+      <td><%= user.id %></td>
+      <td><%= user.name %> </td>
+      <td><%= user.admin ? 'TAK': 'NIE' %> </td>
+    </tr>    
+    
+    <% end %>
+  </table>
+<% end %>
+
+<br />
+<%= link_to "Zarejestruj nowego użytkownika", :action => "new" %>
+
+<br /><br /><br />
+<div id="notes"> 
+  3 sposoby: <br />
+  <div class="small" onmouseover="this.className='big'" onmouseout="this.className='small'">
+    curl -d "user[name]=hacker&user[password]=pass&user[admin]=1" http://localhost:3000/mass_assigment/register
+  </div>
+  <br />
+  Metoda GET:
+  
+  <div class="small" onmouseover="this.className='big'" onmouseout="this.className='small'">
+    http://localhost:3000/mass_assigment/register?user[name]=hacker&user[password]=pass&user[admin]=1
+    po prostu if request.post?
+  </div>
+  <br />
+  
+  Spreparowana strona WWW:
+  <div class="small" onmouseover="this.className='big'" onmouseout="this.className='small'">
+    attr_accessible
+  </div>
+
+</div>

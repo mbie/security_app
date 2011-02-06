@@ -1,0 +1,10 @@
+<% form_for :user, :url => {:action => "register"} do |f| %>
+  <%= f.label :name, 'Podaj nazwe:' %> 
+  <%= f.text_field :name %> <br />
+  
+  <%= f.label :name, 'Podaj haslo:' %> 
+  <%= f.text_field :password %> <br /> <br />
+  
+  <%= f.submit 'Zarejestruj' %>
+<% end %>
+

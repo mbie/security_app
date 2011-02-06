@@ -1,0 +1,40 @@
+
+<% if session[:user_id] %>
+  Jesteś zalogowany jako użytkownik: 
+  <%= User.find(session[:user_id]).name %> <br /> <br />
+  Oto tajna lista projektów: <br>
+  
+    <table>
+      <tr> 
+        <th>ID</th>
+        <th>Tytuł</th>
+        <th>Opis projektu</th>
+      </tr>
+      <% @projects.each do |project| %>
+      <tr>
+        <td><%= project.id %></td>
+        <td><%= project.title %> </td>
+        <td><%= project.description %> </td>
+      </tr>    
+      
+      <% end %>
+    </table>
+    
+
+  <br /><br />
+    <%= link_to "Wyloguj", :action => "logout" %><br />
+
+<% else %>
+    <br />
+    <%= link_to "Zaloguj", :action => "login" %><br />
+    <%= link_to "Zaloguj bezpiecznie", :action => "login_safe" %><br />
+  
+  
+  
+<% end %>
+
+<br />
+<%= link_to "Wyszukaj projekty", :action => "search_projects" %>
+
+
+

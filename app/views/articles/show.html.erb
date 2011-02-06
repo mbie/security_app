@@ -1,0 +1,15 @@
+
+<p>
+  <b>Tytuł:</b>
+  <%= @article.title %>
+</p>
+
+<p>
+  <b>Treść:</b>
+  <!-- <%=  raw strip_tags(@article.body) %> -->
+  <%=  raw @article.body %>
+</p>
+
+
+<%= link_to 'Edytuj', edit_article_path(@article) %> |
+<%= link_to 'Wróć', articles_path %>
