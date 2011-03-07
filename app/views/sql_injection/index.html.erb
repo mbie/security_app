@@ -1,8 +1,7 @@
-
 <% if session[:user_id] %>
   Jesteś zalogowany jako użytkownik: 
   <%= User.find(session[:user_id]).name %> <br /> <br />
-  Oto tajna lista projektów: <br>
+  Oto Twoja tajna lista projektów: <br>
   
     <table>
       <tr> 
